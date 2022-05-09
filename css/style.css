@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HEADER */
+
+header {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+header .header-logo {
+    width: 300px;
+}
+
+/* MAIN */
+/* filters section */
+
+.filter-item {
+    text-align: center;
+    
+}
+
+.filter-item input,
+.filter-item button {
+    padding: .5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid black;
+    font-size: 1.2rem;
+}
+
+/* todos section */
+
+.todos {
+    background-color: lightgray;
+    width: 50%;
+    margin: 2rem auto 0;
+}
+
+ul.todos-list {
+    list-style: none;
+    padding: 1rem;
+}
+
+ul.todos-list li {
+    border-bottom: 1px solid black;
+    font-size: 1.4rem;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}

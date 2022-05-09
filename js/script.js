@@ -15,8 +15,24 @@ const app = new Vue(
     {
         el: "#root",
         data: {
-            todos: 
+            todos: [
+                {action: "fare la spesa", done: "false"},
+                {action: "pulire casa", done: "false"},
+                {action: "sistemare l'armadio", done: "false"}
+            ]
 
+        },
+        methods: {
+            removeTodo: function(index) {
+                Event.preventDefault();
+                this.todos.splice(index, 1);
+            },
+
+            todoToggle: function(index) {
+                const clickedTodo = this.todos[index];
+                clickedTodo.done = !clickedTodo.done
+                console.log(clickedTodo.done);
+            }
         }
     }
 )

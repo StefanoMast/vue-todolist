@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+    <div id="root">
+        <!-- HEADER -->
+        <header>
+            <img class="header-logo" src="img/logo.svg" alt="">
+        </header>
+
+        <!-- MAIN -->
+        <main>
+            <section class="filters">
+                <div class="filter-item">
+                    <input type="text" placeholder="Nuovo ToDo">
+                </div>
+            </section>
+                
+            <section class="todos">
+                <main>
+                    <ul>
+                        <!-- Creo la lista todo -->
+                        <li v-for="(todo, index) in todos">
+                            <!-- Se 'done' è vero, sbarro la scritta -->
+                            <span class="text" @click="todoToggle(index)" v-if="todo.done === true" style="text-decoration: line-through">
+                                {{ todo.text }}
+                            </span>
+                            <!-- Altrimenti scrivo cosa devo fare senza sbarrare la scritta -->
+                            <span class="text" @click="todoToggle(index)" v-else="todo.done === false">
+                                {{ todo.text }}
+                            </span>
+        
+                            <!-- Elemento che fa sparire un todo al 'click' -->
+                            <a @click="removeTodo(index)" href=""><i class="fas fa-trash-alt"></i></a>
+                        </li>
+                    </ul>
+                </main>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+    
+</body>
+</html>
